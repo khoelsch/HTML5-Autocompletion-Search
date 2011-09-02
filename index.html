@@ -11,16 +11,28 @@
     }
     // Lauch, what need to be launched on startup
     $(document).ready(init);*/
+    function openUrl(url) {
+      if (url) {
+        window.open(url);
+      }
+
+      // suppress the HTML form submit action
+      return false;
+    }
   </script>
 </head>
 <body>
-  <h1>Enter a beer brand of your choice:</h1>
-  <input list="beerBrands" />
-  <datalist id="beerBrands">
-    <option label="Becks" value="Becks" />
-    <option label="Diebels value="Diebels" />
-    <option label="Jever" value="Jever" />
-    <option label="K&ouml;lsch" value="K&ouml;lsch" />
-  </datalist>
+  <h1>Open Page for Topic in Studio's ASDoc</h1>
+  <p>
+    Just enter a topic and select an item. You will then get the corresponding URL from the Studio ASDoc documentation.
+  </p>
+  <form>
+    <input id="topicUrl" list="topics" />
+    <datalist id="topics">
+      <option label="PropertyPathExpression" value="http://www.google.de" />
+      <option label="CapConnection" value="http://www.spiegel.de" />
+    </datalist>
+    <input type="submit" onclick="javascript:openUrl($('#topicUrl').val())" value="open URL" />
+  </form>
 </body>
 </html>
