@@ -3,15 +3,24 @@
 <head>
   <meta charset=utf-8>
   <title>Prototype of an autocompleting input field with only HTML5 techniques.</title>
+  <script type="text/javascript" src="./jquery-1.6.2.js"></script>
+  <script type="text/javascript">
+    // In case you need to do something when page is fully loaded
+    /*function init() {
+      alert("Yihaa!");
+    }
+    // Lauch, what need to be launched on startup
+    $(document).ready(init);*/
+  </script>
 </head>
 <body>
-<h1>Enter a beer brand of your choice:</h1>
-<input list="beerBrands" />
-<datalist id="beerBrands">
-  <option label="Becks" value="Becks" />
-  <option label="Diebels value="Diebels" />
-  <option label="Jever" value="Jever" />
-  <option label="K&ouml;lsch" value="K&ouml;lsch" />
-</datalist>
+  <h1>Enter a beer brand of your choice:</h1>
+  <input list="beerBrands" />
+  <datalist id="beerBrands">
+    <option label="Becks" value="Becks" />
+    <option label="Diebels value="Diebels" />
+    <option label="Jever" value="Jever" />
+    <option label="K&ouml;lsch" value="K&ouml;lsch" />
+  </datalist>
 </body>
 </html>
