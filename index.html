@@ -3,20 +3,21 @@
 <head>
   <meta charset=utf-8>
   <title>Prototype of an autocompleting input field with only HTML5 techniques.</title>
+
+  <!-- For easy access to input field named 'topicUrl'. -->
   <script type="text/javascript" src="./jquery-1.6.2.js"></script>
+
   <script type="text/javascript">
-    // In case you need to do something when page is fully loaded
-    /*function init() {
-      alert("Yihaa!");
-    }
-    // Lauch, what need to be launched on startup
-    $(document).ready(init);*/
+    // URLs bases on Studio 1.1.6
+    //const STUDIO_ASDOC_INDEX = "https://repository.coremedia.com/nexus/content/sites/download-area/studio/1.1.6/studio/asdoc/index.html";
+    const STUDIO_ASDOC_BASEURL = "https://repository.coremedia.com/nexus/content/sites/download-area/studio/1.1.6/studio/asdoc/";
+
     function openUrl(url) {
       if (url) {
-        window.open(url);
+        window.open(STUDIO_ASDOC_BASEURL + url);
       }
 
-      // suppress the HTML form submit action
+      // suppress the HTML-form submit action
       return false;
     }
   </script>
@@ -29,8 +30,9 @@
   <form>
     <input id="topicUrl" list="topics" />
     <datalist id="topics">
-      <option label="PropertyPathExpression" value="http://www.google.de" />
-      <option label="CapConnection" value="http://www.spiegel.de" />
+      <option label="Startseite" value="index.html" />
+      <option label="CapConnection" value="com/coremedia/cap/common/CapConnection.html" />
+      <option label="PropertyPathExpression" value="com/coremedia/ui/data/PropertyPathExpression.html" />
     </datalist>
     <input type="submit" onclick="javascript:openUrl($('#topicUrl').val())" value="open URL" />
   </form>
